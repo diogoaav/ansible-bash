@@ -1,6 +1,6 @@
 # ansible-bash
 
-    ```shell
+    ```
 ansible_directory/
 ├── playbook-rhel.yml
 └── rhel-network-final.txt
