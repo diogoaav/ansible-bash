@@ -1,0 +1,14 @@
+---
+- name: Execute Bash Script on RHEL Servers
+  hosts: rhel_hosts  # Define the group from your inventory file
+  become: true  # This allows Ansible to become root on the remote hosts
+
+  tasks:
+    - name: Copy Bash Script
+      copy:
+        src: rhel-network-final.txt  # Name of your bash script
+        dest: /tmp/rhel-network-final.txt  # Destination path on remote host
+        mode: '0755'  # Set the execute permission
+
+    - name: Execute Bash Script
+      shell: /tmp/rhel-network-final.txt
